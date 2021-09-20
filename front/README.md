@@ -1,6 +1,6 @@
 # Background
 
-Um novo cliente contratou a HYBRIDe pediu para que fosse feito um frontend para pesquisar dados de repositorios de usuários do github e também as issues dos repositórios. Para essa funcionalidade, a aplicação deve consumir da API do github.
+Um novo cliente contratou a HYBRID e pediu para que fosse feito um frontend para pesquisar dados de repositorios de usuários do github e também as issues dos repositórios. Para essa funcionalidade, a aplicação deve consumir da API do github.
 
 # Requisitos
 

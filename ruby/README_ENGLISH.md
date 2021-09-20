@@ -1,6 +1,6 @@
 # Background
 
-A new client hired XL Solutions to develop a virtual store specialized in mobile devices. To first create the store inventory, with all available devices, quantity and prices, they sent a CSV file with the data. He also informed that he needs to update this information periodically with save type CSV.
+A new client hired HYBRID to develop a virtual store specialized in mobile devices. To first create the store inventory, with all available devices, quantity and prices, they sent a CSV file with the data. He also informed that he needs to update this information periodically with save type CSV.
 
 To make this process easier, it is needed to create a interface where this files can be uploaded, and a second interface that allows the user to validate the uploaded information which shows device, price, quantity. This interface should also allow filtering the data.
 

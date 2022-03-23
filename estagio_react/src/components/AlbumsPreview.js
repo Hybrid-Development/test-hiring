@@ -4,11 +4,14 @@ import '../styles/albumsPreview.css'
 import { AnimatePresence } from 'framer-motion';
 import Modal from '../components/Modal'
 import Album from './Album';
+import { useUserContext } from '../contexts/user';
 
 export default function AlbumPreiew(props){
   const [albums, setAlbums] = useState([])
   const [modalOpen, setModalOpen] = useState(false)
   const [currentAlbum, setCurrentAlbum] = useState({})
+
+  const { setPath } = useUserContext()
 
   useEffect(() => {
     getAlbums(props.user.id).then(resp => {
@@ -25,8 +28,10 @@ export default function AlbumPreiew(props){
     setModalOpen(!modalOpen)
     if(!modalOpen === true){
       setCurrentAlbum(album)
+      setPath('photos')
     }else{
       setCurrentAlbum({})
+      setPath('albums')
     } 
   }
   

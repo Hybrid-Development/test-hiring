@@ -11,7 +11,7 @@ import Posts from '../components/Posts';
 export default function Usuarios() {
   const [users, setUsers] = useState([])
 
-  const { setUser, user } = useUserContext()
+  const { setUser, user, setPath } = useUserContext()
   
   useEffect(() => {
     getUsers().then(resp => {
@@ -25,8 +25,10 @@ export default function Usuarios() {
     setModalOpenAlbums(!modalOpenAlbums)
     if(!modalOpenAlbums === true){
       setUser(user)
+      setPath('albums')
     }else{
       setUser({})
+      setPath('users')
     } 
   }
 
@@ -35,8 +37,10 @@ export default function Usuarios() {
     setModalOpenPosts(!modalOpenPosts)
     if(!modalOpenPosts === true){
       setUser(user)
+      setPath('posts')
     }else{
       setUser({})
+      setPath('users')
     } 
   }
 

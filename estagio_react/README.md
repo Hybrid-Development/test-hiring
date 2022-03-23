@@ -1,56 +1,70 @@
-# Teste para vaga de estagiário
+# Getting Started with Create React App
 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# Como enviar sua proposta
+## Available Scripts
 
-- Crie um fork deste repositório;
-- Implemente sua solução, fazendo commits da maneira que faria em um projeto profissional;
-- Substitua este README com um específico para sua aplicação, indicando como rodá-la, e como executar os testes (fique à vontade para inserir mais detalhes técnicos, caso deseje);
-- Abra um pull request para este repositório.
+In the project directory, you can run:
 
-# Detalhamento
+### `npm start`
 
-## Exercício de front-end
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## Desafio I
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-O objetivo é fazer uma aplicação em React para visualização de álbuns e fotos dos usuários. A aplicação deverá conter uma tela em que o usuário verá uma lista de usuários. Ao selecionar um usuário, deverá ser exibido os álbuns de fotos pertencentes ao mesmo. Cada álbum selecionado deverá exibir as fotos no formato de thumbnail. Use sua criativade para exibir a navegação da melhor forma possível para o usuário.
+### `npm test`
 
-O importante nesta parte do desafio é que saibamos como você lida com os componentes que formam as técnicas contemporâneas de desenvolvimento client-side, no que tange separação de responsabilidades, indentação de código, etc.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-As funcionalidades esperadas são:
+### `npm run build`
 
-- Listar usuários;
-- Listar álbuns de cada usuário;
-- Visualizar as fotos de cada álbum no formato de thumbnail;
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## Documentação da API
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-- API RESTful
-- URL: https://jsonplaceholder.typicode.com/guide/
-- Para fazer as requisições HTTP recomendamos o uso da biblioteca [axios](https://github.com/axios/axios).
-- Exemplo de chamada para buscar os álbuns de um usuário: https://jsonplaceholder.typicode.com/users/1/albums
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### `npm run eject`
 
-## Desafio II
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-O objetivo é fazer uma tela em que o usuário verá uma lista de postagens.
-Cada postagem terá uma lista com seus referentes comentários.
-Um post pode ter ou não comentário, dependendo do que vier da API.
-O Usuário poderá editar e deletar um post.
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-O importante nesta parte do desafio é que saibamos como você lida com os componentes que formam as técnicas contemporâneas de desenvolvimento client-side, no que tange separação de responsabilidades, indentação de código, etc.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-As funcionalidades esperadas são:
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-- Listar postagens;
-- Listar comentários de cada postagem;
-- Edição e remoção de uma postagem;
+## Learn More
 
-Obs: Pode utilizar apenas o usuário 1 para a implementação. Exemplo: https://jsonplaceholder.typicode.com/users/1/posts
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## Documentação da API
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-- API RESTful
-- URL: https://jsonplaceholder.typicode.com/guide/
-- Para fazer as requisições HTTP recomendamos o uso da biblioteca [axios](https://github.com/axios/axios).
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

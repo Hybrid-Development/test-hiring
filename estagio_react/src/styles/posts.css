@@ -1,0 +1,114 @@
+.posts_container{
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  max-height: 93vh;
+  padding-top: 2em;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+
+.posts_list{
+  padding-top: 1em;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  overflow-y: scroll;
+  padding: 0 1em 5em 1em;
+  max-height: 93vh;
+}
+
+.posts_list::-webkit-scrollbar {
+  display: none;
+}
+
+.posts_list_item {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 2em 2em;
+  box-shadow: 0px 4px 10px rgba(128, 128, 128, .25);
+  border-radius: 1em;
+  background-color: #fff;
+  margin: 1em 0;
+  user-select: none;
+}
+
+.posts_list_item .title{
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.posts_list_item .body{
+  margin: 1em 0;
+}
+
+.comments_list{
+
+}
+.comments_list_item{
+  padding: 1em;
+  display: flex;
+  align-items: flex-start;
+  box-shadow: 0 1px 2px rgba(128, 128, 128, .25);
+  margin-bottom: .5em;
+  border-radius: 1em;
+  user-select: none;
+}
+
+.comments_list_item:hover{
+  box-shadow: 0 4px 10px rgba(128, 128, 128, .25);
+  cursor: pointer;
+}
+
+.comment_avatar{
+  height: 4em;
+  width: 4em;
+  background-color: rgba(59, 59, 59, .1);
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: grid;
+  place-content: center;
+  color: rgba(59, 59, 59, .5);
+  margin-right: 1em;
+}
+
+.comment_content p{
+  word-break: break-all
+}
+
+.comment_content p:nth-child(1){
+  font-weight: bold;
+  margin-bottom: .5em;
+}
+
+.comment_content p:nth-child(2){
+  font-weight: 400;
+  letter-spacing: .02em;
+}
+
+.btn{
+  padding: .5em 1em;
+  font-size: 16px;
+  border: none;
+  border-radius: .3em;
+  box-shadow: 0px 4px 10px rgba(128, 128, 128, .25);
+  text-transform: capitalize;
+  background-color: #fff;
+  letter-spacing: 0.02em;
+}
+
+.btn:hover{
+  cursor: pointer;
+  font-size: 16px;
+  background-color: rgba(59, 59, 59, .1);
+  color: #666;
+  font-weight: bold;
+}

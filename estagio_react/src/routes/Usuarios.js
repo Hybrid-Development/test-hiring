@@ -6,12 +6,12 @@ import {getUsers} from '../services/user'
 import '../styles/usuarios.css'
 import { AnimatePresence } from 'framer-motion';
 import { useUserContext } from '../contexts/user';
+import Posts from '../components/Posts';
 
 export default function Usuarios() {
   const [users, setUsers] = useState([])
-  const [currentUser, setCurrentUser] = useState({})
 
-  const { setUser } = useUserContext()
+  const { setUser, user } = useUserContext()
   
   useEffect(() => {
     getUsers().then(resp => {
@@ -20,12 +20,21 @@ export default function Usuarios() {
   }, [])
 
 
-  const [modalOpen, setModalOpen] = useState(false)
-  const handleModal = (user) => {
-    setModalOpen(!modalOpen)
-    if(!modalOpen === true){
+  const [modalOpenAlbums, setModalOpenAlbums] = useState(false)
+  const handleModalAlbums = (user) => {
+    setModalOpenAlbums(!modalOpenAlbums)
+    if(!modalOpenAlbums === true){
       setUser(user)
-      setCurrentUser(user)
+    }else{
+      setUser({})
+    } 
+  }
+
+  const [modalOpenPosts, setModalOpenPosts] = useState(false)
+  const handleModalPosts = (user) => {
+    setModalOpenPosts(!modalOpenPosts)
+    if(!modalOpenPosts === true){
+      setUser(user)
     }else{
       setUser({})
     } 
@@ -40,14 +49,20 @@ export default function Usuarios() {
       <ul class="users_list">
         {users.map((user, index) => 
           <li key={index}>
-            <UserCard action={handleModal} user={user}/>
+            <UserCard action={[handleModalPosts, handleModalAlbums]} user={user}/>
           </li>
         )}
       </ul>
       <AnimatePresence>
-        {modalOpen 
+        {modalOpenPosts 
           ? 
-            <Modal close={() => handleModal(currentUser)}><AlbumsPreview user={currentUser}/></Modal> 
+            <Modal close={() => handleModalPosts(user)}><Posts user={user}/></Modal> 
+          : 
+            null
+        }
+        {modalOpenAlbums 
+          ? 
+            <Modal close={() => handleModalAlbums(user)}><AlbumsPreview user={user}/></Modal> 
           : 
             null
         }

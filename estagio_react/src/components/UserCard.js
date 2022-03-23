@@ -32,11 +32,11 @@ export default function UserCard(props){
       </div>
 
       {props.hasOwnProperty('action') && <div class="usercard_footer">
-        <button type="button" class="gallary-btn" onClick={() => props.action(props.user)}>
+        <button type="button" class="gallary-btn" onClick={() => props.action[0](props.user)}>
           posts
         </button>
         <div style={{flex: 1}}/>
-        <button type="button" class="gallary-btn" onClick={() => props.action(props.user)}>
+        <button type="button" class="gallary-btn" onClick={() => props.action[1](props.user)}>
           galeria
         </button>        
       </div>}

@@ -1,0 +1,25 @@
+.photos_container{
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  max-height: 93vh;
+  padding-top: 2em;
+}
+
+.photos_list{
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-gap: 1em;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  overflow-y: scroll;
+  padding: 0 1em 5em 1em;
+  max-height: 93vh;
+}
+
+.photos_list::-webkit-scrollbar {
+  display: none;
+}

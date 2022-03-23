@@ -1,0 +1,52 @@
+.header_container{
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 111;
+  height: 7vh;
+  background-color: #3d5a6c;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.header_wrapper {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  padding: 0 1em;
+}
+
+.header_wrapper .header_logo h1{
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.header_wrapper .header_logo span{
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+}
+
+.header_wrapper button{
+  position: absolute;
+  right: 0;
+}
+
+.header_sub{
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff
+}
+
+.header_search{
+  display: flex;
+  align-items: center;
+}
+
+.header_search:hover{
+  cursor: pointer;
+}

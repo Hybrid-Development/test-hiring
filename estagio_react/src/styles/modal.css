@@ -1,0 +1,22 @@
+.modal_wrapper{
+  position: absolute; 
+  inset: 0;
+  backdrop-filter: blur(5px); 
+  z-index: 222;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.close_btn{
+  position: absolute;
+  right: 0px;
+  top: 10px;
+  border: none;
+  background: #fff;
+  border-radius: 100%;
+}
+
+.close_btn:hover{
+  cursor: pointer;
+}

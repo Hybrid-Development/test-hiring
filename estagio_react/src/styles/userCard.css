@@ -1,0 +1,77 @@
+.usercard_wrapper{
+  display: flex;
+  flex-direction: column;
+  padding: 2em 1em 1em 1em;
+  box-shadow: 0px 4px 10px rgba(128, 128, 128, .25);
+  border-radius: 1em;
+}
+
+.usercard_header{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.usercard_header > p {
+  word-wrap: break-word;
+  margin-left: 1em;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.usercard_avatar{
+  height: 4em;
+  width: 4em;
+  background-color: rgba(59, 59, 59, .1);
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: grid;
+  place-content: center;
+  color: rgba(59, 59, 59, .5);
+}
+
+.usercard_content{
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.usercard_content_item{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.usercard_content_item p:nth-child(1){
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: capitalize;
+
+}
+
+.usercard_footer{
+  margin-top: 2em;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.gallary-btn{
+  padding: .5em 1em;
+  font-size: 16px;
+  border: none;
+  border-radius: .3em;
+  box-shadow: 0px 4px 10px rgba(128, 128, 128, .25);
+  text-transform: capitalize;
+  background-color: #fff;
+  letter-spacing: 0.02em;
+}
+
+.gallary-btn:hover{
+  cursor: pointer;
+  font-size: 16px;
+  background-color: rgba(59, 59, 59, .1);
+  color: #666;
+  font-weight: bold;
+}

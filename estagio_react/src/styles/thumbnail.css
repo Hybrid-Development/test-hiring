@@ -2,6 +2,7 @@
     height: 100%;
     width: 100%;
 }
+
 .thumbnail_img_wrapper{
     height: auto;
 }
@@ -9,6 +10,8 @@
 .thumbnail_img_wrapper img{
     width: 100%;
     height: auto;
+    border-radius: 1em;
+    box-shadow: 0px 4px 10px rgba(128, 128, 128, .25);
 }
 
 .thumbnail_info{

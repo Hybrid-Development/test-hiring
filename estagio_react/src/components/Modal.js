@@ -1,12 +1,13 @@
 import { motion } from "framer-motion"
 export default function Modal(props){
     return <motion.div variants={dropIn}
-            style={{position: 'absolute', inset: 0, background: '#fff'}}
+            style={{position: 'absolute', inset: 0, background: '#fff', zIndex: 222}}
             initial="hidden"
             animate="visible"
             exit="exit">
             <button 
               type="button" 
+              style={{zIndex: 333}}
               onClick={() => props.close()}>xxxxxx</button>
         {props.children}
     </motion.div>
@@ -30,5 +31,11 @@ const dropIn = {
     exit: {
       y: "100vh",
       opacity: 0,
+      transition: {
+        duration: 0.1,
+        type: "spring",
+        damping: 25,
+        stiffness: 250,
+      },
     },
   };

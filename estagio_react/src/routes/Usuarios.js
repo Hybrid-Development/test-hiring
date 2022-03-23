@@ -30,6 +30,11 @@ export default function Usuarios() {
       setUser({})
     } 
   }
+
+  if(!users.length){
+    return <div>loading</div>
+  }
+
   return (<>
     <main>
       <ul class="users_list">

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 export default function Modal(props){
     return <motion.div variants={dropIn}
+            style={{position: 'fixed', inset: 0, background: '#fff'}}
             initial="hidden"
             animate="visible"
             exit="exit">
@@ -11,7 +12,7 @@ export default function Modal(props){
 
 const dropIn = {
     hidden: {
-      y: "-100vh",
+      y: "100vh",
       opacity: 0,
     },
     visible: {

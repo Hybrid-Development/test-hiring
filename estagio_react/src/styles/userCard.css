@@ -8,7 +8,7 @@
 
 .usercard_header{
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 }
 
@@ -17,6 +17,7 @@
   margin-left: 1em;
   font-size: 16px;
   font-weight: bold;
+  text-align: left;
 }
 
 .usercard_avatar{

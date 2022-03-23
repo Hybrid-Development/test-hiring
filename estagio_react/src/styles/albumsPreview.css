@@ -16,7 +16,7 @@
   max-width: 1024px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 1em;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
@@ -36,10 +36,13 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: #fff;
 }
 
 .albums_list li p {
   text-transform: capitalize;
+  text-align: left;
+
 }
 
 .albums_list li div {

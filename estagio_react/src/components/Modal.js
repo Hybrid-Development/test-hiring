@@ -1,13 +1,20 @@
 import { motion } from "framer-motion"
 export default function Modal(props){
     return <motion.div variants={dropIn}
-            style={{position: 'absolute', inset: 0, background: '#fff', zIndex: 222}}
+            style={{  
+              position: 'absolute', 
+              inset: 0,
+              backdropFilter: 'blur(5px)', 
+              zIndex: 222,
+              width: '100%',
+              maxWidth: '1024px',
+              margin: '0 auto', padding: '1em 0'}}
             initial="hidden"
             animate="visible"
             exit="exit">
             <button 
               type="button" 
-              style={{zIndex: 333}}
+              style={{position: 'absolute', right: '0px'}}
               onClick={() => props.close()}>xxxxxx</button>
         {props.children}
     </motion.div>

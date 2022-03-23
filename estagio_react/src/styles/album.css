@@ -6,7 +6,6 @@
 }
 
 .photos_list{
-  padding-top: 1em;
   width: 100%;
   max-width: 1024px;
   margin: 0 auto;
@@ -16,7 +15,7 @@
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
   overflow-y: scroll;
-  padding: 1em 1em 5em 1em;
+  padding: 0 1em 5em 1em;
   max-height: 93vh;
 }
 

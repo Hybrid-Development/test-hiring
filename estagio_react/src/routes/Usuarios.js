@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Modal from '../components/Modal'
 import AlbumsPreiew from '../components/AlbumsPreview';
 import {getUsers} from '../services/user'
+import '../styles/usuarios.css'
 
 export default function Usuarios() {
   const [users, setUsers] = useState([])
@@ -21,10 +22,10 @@ export default function Usuarios() {
     !modalOpen === false && localStorage.removeItem('user_id')
   }
   return (<>
-    <main style={{ padding: "1rem 0" }}>
+    <main>
       <ul>
         {users.map((user, index) => 
-          <li key={index}><button type="button" onClick={() => handleModal(user)}>user {index}</button></li>
+          <li key={index}><button type="button" onClick={() => handleModal(user)}>ver galeria</button></li>
         )}
       </ul>
     </main>

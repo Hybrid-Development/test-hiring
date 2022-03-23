@@ -1,0 +1,16 @@
+main {
+  height: 100%;
+}
+
+ul {
+  width: 95%;
+  max-width: 1024px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-gap: .5em;
+}
+
+ul li {
+  min-height: 8em;
+}

@@ -25,10 +25,31 @@ export default function Usuarios() {
     <main>
       <ul>
         {users.map((user, index) => 
-          <li key={index}><button type="button" onClick={() => handleModal(user)}>ver galeria</button></li>
+          <li key={index}>
+            <UserCard action={handleModal} user={user}/>
+          </li>
         )}
       </ul>
     </main>
     {modalOpen ? <Modal close={() => handleModal(currentUser)}><AlbumsPreiew user={currentUser}/></Modal> : null}
   </>);
+}
+
+const UserCard = (props) => {
+  return <>
+    <div class="usercard_wrapper">
+      <div class="usercard_header">
+        <div class="usercard_avatar"/>
+        <p>{props.user.name}</p>
+        <div style={{flex: 1}} />
+      </div>
+
+      <div class="usercard_content">
+      </div>
+      
+      <div class="usercard_footer">
+        <button type="button" onClick={() => props.action(props.user)}>ver galeria</button>
+      </div>
+    </div>
+  </>
 }

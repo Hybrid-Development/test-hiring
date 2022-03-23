@@ -3,6 +3,7 @@ import Thumbnail from './Thumbnail';
 import { getPhotos } from '../services/album'
 import '../styles/album.css'
 import { useUserContext } from '../contexts/user';
+import Loader from './Loader'
 
 export default function Album(props) {
   const [photos, setPhotos] = useState([])
@@ -15,7 +16,11 @@ export default function Album(props) {
   }, [props.id])
 
   if(!photos.length){
-    return <p>loading...</p>
+    return <div style={{
+      height: '93vh', 
+      width: '100%', 
+      display: 'grid', 
+      placeContent: 'center'}}><Loader /></div>
   }
 
   return (

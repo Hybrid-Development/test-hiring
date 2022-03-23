@@ -46,3 +46,7 @@
   display: flex;
   align-items: center;
 }
+
+.header_search:hover{
+  cursor: pointer;
+}

@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react'
 import { getAlbums } from '../services/album'
 import '../styles/albumsPreview.css'
 import { AnimatePresence } from 'framer-motion';
-import Modal from '../components/Modal'
+import Modal from './Modal'
 import Album from './Album';
 import { useUserContext } from '../contexts/user';
+import Loader from './Loader'
 
 export default function AlbumPreiew(props){
   const [albums, setAlbums] = useState([])
@@ -19,8 +20,13 @@ export default function AlbumPreiew(props){
     })
   }, [props.user])
 
+
   if(!albums.length){
-    return <p>loading...</p>
+    return <div style={{
+      height: '93vh', 
+      width: '100%', 
+      display: 'grid', 
+      placeContent: 'center'}}><Loader /></div>
   }
 
 

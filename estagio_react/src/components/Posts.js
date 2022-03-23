@@ -3,12 +3,11 @@ import { getPosts } from '../services/post'
 import { useUserContext } from '../contexts/user';
 import '../styles/posts.css'
 import { BsPerson } from 'react-icons/bs'
+import Loader from './Loader'
 
 
 export default function UserPosts(props){
   const [posts, setPosts] = useState([])
-  const [currentPost, setCurrentPost] = useState({})
-  const [editedId, setEditedId] = useState(null)
   const { user } = useUserContext()
 
   useEffect(() => {
@@ -23,8 +22,28 @@ export default function UserPosts(props){
   }, [props.user])
 
   if(!posts.length){
-    return <p>loading...</p>
+    return <div style={{
+      height: '93vh', 
+      width: '100%', 
+      display: 'grid', 
+      placeContent: 'center'}}><Loader /></div>
   }
+
+  return <div className="posts_container">
+    <ul class="posts_list">
+      {posts.map((post) => 
+        <li class="posts_list_item" key={post.id}>
+          <PostIntance posts={posts} post={post} setPosts={setPosts}/>
+        </li>)}
+    </ul>
+  </div>
+}
+
+const PostIntance = ({post, posts,setPosts}) => {
+  const [currentPost, setCurrentPost] = useState({})
+  const [editedId, setEditedId] = useState(null)
+
+  const { user } = useUserContext()
 
 
   const viewComments = (post) => {
@@ -85,13 +104,8 @@ export default function UserPosts(props){
         localStorage.setItem('posts', JSON.stringify({[userId]: items.map(item => item)}))
     }
   }
-  
 
-  return <div className="posts_container">
-    <ul class="posts_list">
-      {posts.map((post) => 
-        <li class="posts_list_item" key={post.id}>
-          {
+  return <>{
             (editedId == post.id) ?
             <>
               <input value={post.title} onChange={(e) => handleChangeTitle(e, post)}/>
@@ -141,8 +155,7 @@ export default function UserPosts(props){
                 )}
               </ul> 
             : null
-          }
-        </li>)}
-    </ul>
-  </div>
+          }</>
+  
+
 }

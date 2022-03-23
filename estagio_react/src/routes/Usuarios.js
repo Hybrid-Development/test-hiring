@@ -7,6 +7,7 @@ import '../styles/usuarios.css'
 import { AnimatePresence } from 'framer-motion';
 import { useUserContext } from '../contexts/user';
 import Posts from '../components/Posts';
+import Loader from '../components/Loader'
 
 export default function Usuarios() {
   const [users, setUsers] = useState([])
@@ -28,7 +29,7 @@ export default function Usuarios() {
       setPath('albums')
     }else{
       setUser({})
-      setPath('users')
+      setPath('albums')
     } 
   }
 
@@ -40,12 +41,16 @@ export default function Usuarios() {
       setPath('posts')
     }else{
       setUser({})
-      setPath('users')
+      setPath('posts')
     } 
   }
 
   if(!users.length){
-    return <div>loading</div>
+    return <div style={{
+      height: '93vh', 
+      width: '100%', 
+      display: 'grid', 
+      placeContent: 'center'}}><Loader /></div>
   }
 
   return (<>

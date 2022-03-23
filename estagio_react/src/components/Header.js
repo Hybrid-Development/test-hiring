@@ -1,8 +1,12 @@
 import '../styles/header.css'
 import { useUserContext } from '../contexts/user'
-import { BsSearch } from 'react-icons/bs'
+import { HiOutlineRefresh } from 'react-icons/hi'
 export default function Header(){
   const { user, path } = useUserContext()
+
+  const resetStorage = () => {
+    localStorage.removeItem('posts')
+  }
 
   return <div class="header_container">
     <div className="header_wrapper">
@@ -15,9 +19,11 @@ export default function Header(){
         </span>
       </div>
       
+      { path == 'users' ? 
       <div class="header_search">
-        <BsSearch fontSize={28}/>
+        <HiOutlineRefresh fontSize={28} onClick={() => resetStorage()}/>
       </div>
+      : null}
     </div>
   </div>
 }

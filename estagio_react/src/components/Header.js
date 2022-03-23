@@ -1,0 +1,10 @@
+import '../styles/header.css'
+
+export default function Header(){
+  return <div class="header_wrapper">
+    <span class="header_logo">
+      <h1>galeria <span>photos</span></h1>
+      <div style={{flex: 1}}/>
+    </span>
+  </div>
+}

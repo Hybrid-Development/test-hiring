@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
 import { getPhotos } from '../services/album'
-export default function Usuarios() {
+export default function Album() {
   const { id } = useParams()
   const [photos, setPhotos] = useState([])
 
@@ -14,6 +14,7 @@ export default function Usuarios() {
   if(!photos.length){
     return <p>loading...</p>
   }
+
   return (
     <main style={{ padding: "1rem 0" }}>
       <h2>album {id}</h2>

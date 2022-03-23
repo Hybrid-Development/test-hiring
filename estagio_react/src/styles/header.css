@@ -1,0 +1,18 @@
+.header_wrapper{
+  width: 100%;
+  position: sticky;
+  top: 0;
+  display: flex;
+  padding: 1em 2em;
+}
+
+.header_wrapper .header_logo h1{
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.header_wrapper .header_logo span{
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+}

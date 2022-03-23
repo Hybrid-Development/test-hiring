@@ -8,6 +8,6 @@ export function getAlbums(id){
 
 export function getPhotos({userId, albumId}){
   return api().get(`users/${userId}/photos`)
-    .then(resp => resp.data.filter(album => album.albumId === albumId))
+    .then(resp => resp.data.filter(album => album.albumId === parseInt(albumId)))
     .catch(e => console.log(e)) 
 }

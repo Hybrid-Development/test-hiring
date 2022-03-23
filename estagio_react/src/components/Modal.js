@@ -4,6 +4,7 @@ export default function Modal(props){
             initial="hidden"
             animate="visible"
             exit="exit">
+            <button type="button" onClick={() => props.close()}>x</button>
         {props.children}
     </motion.div>
 }

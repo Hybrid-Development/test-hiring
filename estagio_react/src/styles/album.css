@@ -1,0 +1,25 @@
+.albums_container{
+  width: 95%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.albums_header{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.albums_header p {
+  font-size: 14px;
+  font-weight: bold;
+  color: #666;
+}
+
+.photos_list{
+  width: 95%;
+  max-width: 1024px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 1.5em;
+}

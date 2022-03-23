@@ -9,7 +9,7 @@
   max-width: 1024px;
   margin: 0 auto;
   display: flex;
-  padding: 1em 0;
+  padding: 2em 0 0 0;
 }
 
 .header_wrapper .header_logo h1{

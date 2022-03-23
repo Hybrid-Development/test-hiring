@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
 import { getPhotos } from '../services/album'
-export default function Album() {
+import '../styles/album.css'
+export default function Album(props) {
   const { id } = useParams()
   const [photos, setPhotos] = useState([])
 
@@ -16,9 +17,11 @@ export default function Album() {
   }
 
   return (
-    <main style={{ padding: "1rem 0" }}>
-      <h2>album {id}</h2>
-      <ul>
+    <main className='albums_container'>
+      <div className="albums_header">
+        <p>{localStorage.getItem('user_name')}</p>
+      </div>
+      <ul className="photos_list">
         {photos.map(photo => <li key={photo.id}>foto {photo.id}</li>)}
       </ul>
     </main>

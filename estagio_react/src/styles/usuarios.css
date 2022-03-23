@@ -1,8 +1,9 @@
 main {
   height: 100%;
+  position: relative;
 }
 
-ul {
+.users_list {
   width: 95%;
   max-width: 1024px;
   margin: 0 auto;
@@ -11,44 +12,6 @@ ul {
   grid-gap: 1.5em;
 }
 
-ul li {
-  min-height: 12em;
-}
-
-.usercard_wrapper{
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  padding: 2em 1em 1em 1em;
-  box-shadow: 0px 4px 10px rgba(128, 128, 128, .25);
-  border-radius: 1em;
-}
-
-.usercard_header{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.usercard_header p {
-  word-wrap: break-word;
-  margin-left: 1em;
-  font-size: 16px;
-}
-
-.usercard_avatar{
-  height: 3em;
-  width: 3em;
-  background-color: #ccc;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.usercard_content{
-  flex: 1;
-}
-
-.usercard_footer{
-  display: flex;
-  justify-content: flex-end;
+.users_list li {
+  height: auto;
 }

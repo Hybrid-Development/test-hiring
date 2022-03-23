@@ -15,9 +15,8 @@
   max-width: 1024px;
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   position: relative;
+  justify-content: space-between;
   padding: 0 1em;
 }
 
@@ -41,4 +40,9 @@
   font-size: 14px;
   font-weight: bold;
   color: #fff
+}
+
+.header_search{
+  display: flex;
+  align-items: center;
 }

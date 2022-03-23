@@ -2,12 +2,14 @@ import { useEffect, useState } from 'react';
 import Thumbnail from './Thumbnail';
 import { getPhotos } from '../services/album'
 import '../styles/album.css'
+import { useUserContext } from '../contexts/user';
 
 export default function Album(props) {
   const [photos, setPhotos] = useState([])
+  const { user } = useUserContext()
 
   useEffect(() => {
-    getPhotos({userId: localStorage.getItem('user_id'), albumId: props.id}).then(resp => {
+    getPhotos({userId: user.id, albumId: props.id}).then(resp => {
       setPhotos(resp)
     })
   }, [props.id])

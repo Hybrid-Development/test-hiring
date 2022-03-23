@@ -5,27 +5,29 @@ import UserCard from '../components/UserCard';
 import {getUsers} from '../services/user'
 import '../styles/usuarios.css'
 import { AnimatePresence } from 'framer-motion';
+import { useUserContext } from '../contexts/user';
 
 export default function Usuarios() {
   const [users, setUsers] = useState([])
+  const [currentUser, setCurrentUser] = useState({})
+
+  const { setUser } = useUserContext()
+  
   useEffect(() => {
     getUsers().then(resp => {
       setUsers(resp)
     })
   }, [])
 
-  const [currentUser, setCurrentUser] = useState({})
 
   const [modalOpen, setModalOpen] = useState(false)
   const handleModal = (user) => {
     setModalOpen(!modalOpen)
-    setCurrentUser(user)
     if(!modalOpen === true){
-      localStorage.setItem('user_id', user.id)
-      localStorage.setItem('user_name', user.name)
+      setUser(user)
+      setCurrentUser(user)
     }else{
-      localStorage.removeItem('user_id')
-      localStorage.removeItem('user_name')
+      setUser({})
     } 
   }
   return (<>

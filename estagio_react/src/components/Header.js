@@ -1,5 +1,8 @@
 import '../styles/header.css'
+import { useUserContext } from '../contexts/user'
 export default function Header(){
+  const { user } = useUserContext()
+
   return <div class="header_container">
     <div className="header_wrapper">
       <span class="header_logo">
@@ -7,7 +10,7 @@ export default function Header(){
         <div style={{flex: 1}}/>
       </span>
       <div className="header_sub">
-        <p>{}</p>
+        <p>{user.name}</p>
       </div>
     </div>
   </div>

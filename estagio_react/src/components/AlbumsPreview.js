@@ -8,7 +8,8 @@ import Album from './Album';
 export default function AlbumPreiew(props){
   const [albums, setAlbums] = useState([])
   const [modalOpen, setModalOpen] = useState(false)
-  
+  const [currentAlbum, setCurrentAlbum] = useState({})
+
   useEffect(() => {
     getAlbums(props.user.id).then(resp => {
       setAlbums(resp)
@@ -20,8 +21,13 @@ export default function AlbumPreiew(props){
   }
 
 
-  const handleModal = () => {
+  const handleModal = (album) => {
     setModalOpen(!modalOpen)
+    if(!modalOpen === true){
+      setCurrentAlbum(album)
+    }else{
+      setCurrentAlbum({})
+    } 
   }
   
   return <div className="albums_container">
@@ -30,14 +36,14 @@ export default function AlbumPreiew(props){
         <li key={album.id}>
           <p>{album.title}</p>
           <div>
-            <button type="button" onClick={() => handleModal()}>Ver Album</button>
+            <button type="button" onClick={() => handleModal(album)}>Ver Album</button>
           </div>
         </li>)}
     </ul>
     <AnimatePresence>
       {modalOpen 
         ? 
-          <Modal close={() => handleModal(props.user)}><Album id={props.user.id}/></Modal> 
+          <Modal close={() => handleModal(props.user)}><Album id={currentAlbum.id}/></Modal> 
         : 
           null
       }

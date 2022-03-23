@@ -4,6 +4,7 @@ import AlbumsPreview from '../components/AlbumsPreview';
 import UserCard from '../components/UserCard';
 import {getUsers} from '../services/user'
 import '../styles/usuarios.css'
+import { AnimatePresence } from 'framer-motion';
 
 export default function Usuarios() {
   const [users, setUsers] = useState([])
@@ -36,7 +37,14 @@ export default function Usuarios() {
           </li>
         )}
       </ul>
-    {modalOpen ? <Modal close={() => handleModal(currentUser)}><AlbumsPreview user={currentUser}/></Modal> : null}
+      <AnimatePresence>
+        {modalOpen 
+          ? 
+            <Modal close={() => handleModal(currentUser)}><AlbumsPreview user={currentUser}/></Modal> 
+          : 
+            null
+        }
+      </AnimatePresence>
     </main>
   </>);
 }

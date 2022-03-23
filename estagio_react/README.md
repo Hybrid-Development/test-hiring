@@ -13,3 +13,4 @@
 - Logo em seguida acesse o diretório onde você fez o clone.
 - Via terminal execute npm install.
 - Via terminal execute npm start ou abra com seu editor de texto preferido.
+- Ou acesse: https://estagio-react.vercel.app/

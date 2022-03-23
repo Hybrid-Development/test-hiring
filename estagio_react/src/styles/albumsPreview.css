@@ -9,12 +9,6 @@
   justify-content: flex-start;
 }
 
-.albums_header p {
-  font-size: 14px;
-  font-weight: bold;
-  color: #666;
-}
-
 .albums_list{
   padding-top: 1em;
   width: 100%;
@@ -28,4 +22,18 @@
 .albums_list li {
   box-shadow: 0px 4px 10px rgba(128, 128, 128, .5);
   border-radius: .5em;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.albums_list li p {
+  text-transform: capitalize;
+}
+
+.albums_list li div {
+  margin-top: 1em;
+  display: flex;
+  justify-content: flex-end;
 }

@@ -16,14 +16,13 @@ export default function AlbumPreiew(props){
     return <p>loading...</p>
   }
   return <div className="albums_container">
-    <div className="albums_header">
-      <p>{localStorage.getItem('user_name')}</p>
-    </div>
     <ul class="albums_list">
       {albums.map((album) => 
         <li key={album.id}>
           <p>{album.title}</p>
-          <Link to={`/album/${album.id}`}>Ver Album</Link>
+          <div>
+            <button><Link to={`/album/${album.id}`}>Ver Album</Link></button>
+          </div>
         </li>)}
     </ul>
   </div>

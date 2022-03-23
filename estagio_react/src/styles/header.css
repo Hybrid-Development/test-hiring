@@ -2,6 +2,8 @@
   width: 100%;
   position: sticky;
   top: 0;
+  background-color: white;
+  z-index: 111;
 }
 
 .header_wrapper {
@@ -10,6 +12,9 @@
   margin: 0 auto;
   display: flex;
   padding: 2em 0 0 0;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
 }
 
 .header_wrapper .header_logo h1{
@@ -21,4 +26,15 @@
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: .02em;
+}
+
+.header_wrapper button{
+  position: absolute;
+  right: 0;
+}
+
+.header_sub{
+  font-size: 14px;
+  font-weight: bold;
+  color: #666;
 }

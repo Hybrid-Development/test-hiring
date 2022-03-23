@@ -29,7 +29,7 @@ export default function Usuarios() {
       setPath('albums')
     }else{
       setUser({})
-      setPath('albums')
+      setPath('users')
     } 
   }
 
@@ -41,7 +41,7 @@ export default function Usuarios() {
       setPath('posts')
     }else{
       setUser({})
-      setPath('posts')
+      setPath('users')
     } 
   }
 

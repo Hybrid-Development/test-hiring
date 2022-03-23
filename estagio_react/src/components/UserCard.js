@@ -37,7 +37,7 @@ export default function UserCard(props){
         </button>
         <div style={{flex: 1}}/>
         <button type="button" class="gallary-btn" onClick={() => props.action[1](props.user)}>
-          galeria
+          álbuns
         </button>        
       </div>}
     </div>

@@ -2,10 +2,12 @@
   width: 100%;
   position: sticky;
   top: 0;
-  background-color: white;
   z-index: 111;
-  padding: 2em 0;
   height: 7vh;
+  background-color: #3d5a6c;
+  color: #fff;
+  display: flex;
+  align-items: center;
 }
 
 .header_wrapper {
@@ -38,5 +40,5 @@
 .header_sub{
   font-size: 14px;
   font-weight: bold;
-  color: #666;
+  color: #fff
 }

@@ -35,8 +35,12 @@ export default function AlbumPreiew(props){
       {albums.map((album) => 
         <li key={album.id}>
           <p>{album.title}</p>
+          <div style={{flex: 1}}/>
           <div>
-            <button type="button" onClick={() => handleModal(album)}>Ver Album</button>
+            <button 
+              className='album-btn'
+              type="button" 
+              onClick={() => handleModal(album)}>Ver Album</button>
           </div>
         </li>)}
     </ul>

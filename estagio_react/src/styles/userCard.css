@@ -21,11 +21,14 @@
 }
 
 .usercard_avatar{
-  height: 3em;
-  width: 3em;
-  background-color: #ccc;
+  height: 4em;
+  width: 4em;
+  background-color: rgba(59, 59, 59, .1);
   border-radius: 50%;
   flex-shrink: 0;
+  display: grid;
+  place-content: center;
+  color: rgba(59, 59, 59, .5);
 }
 
 .usercard_content{
@@ -49,6 +52,26 @@
 }
 
 .usercard_footer{
+  margin-top: 2em;
   display: flex;
   justify-content: flex-end;
+}
+
+.gallary-btn{
+  padding: .5em 1em;
+  font-size: 16px;
+  border: none;
+  border-radius: .3em;
+  box-shadow: 0px 4px 10px rgba(128, 128, 128, .25);
+  text-transform: capitalize;
+  background-color: #fff;
+  letter-spacing: 0.02em;
+}
+
+.gallary-btn:hover{
+  cursor: pointer;
+  font-size: 16px;
+  background-color: rgba(59, 59, 59, .1);
+  color: #666;
+  font-weight: bold;
 }

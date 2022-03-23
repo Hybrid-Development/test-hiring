@@ -1,21 +1,17 @@
 import { motion } from "framer-motion"
+import { CgCloseO } from 'react-icons/cg'
+import '../styles/modal.css'
+
 export default function Modal(props){
     return <motion.div variants={dropIn}
-            style={{  
-              position: 'absolute', 
-              inset: 0,
-              backdropFilter: 'blur(5px)', 
-              zIndex: 222,
-              width: '100%',
-              maxWidth: '1024px',
-              margin: '0 auto', padding: '1em 0'}}
+            class="modal_wrapper"
             initial="hidden"
             animate="visible"
             exit="exit">
             <button 
               type="button" 
-              style={{position: 'absolute', right: '0px'}}
-              onClick={() => props.close()}>xxxxxx</button>
+              class="close_btn"
+              onClick={() => props.close()}><CgCloseO color="red" fontSize={32}/></button>
         {props.children}
     </motion.div>
 }

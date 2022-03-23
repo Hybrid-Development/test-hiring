@@ -1,10 +1,13 @@
 import '../styles/userCard.css'
+import { BsPerson } from 'react-icons/bs'
 
 export default function UserCard(props){
   return <>
     <div class="usercard_wrapper">
       <div class="usercard_header">
-        <div class="usercard_avatar"/>
+        <div class="usercard_avatar">
+          <BsPerson fontSize={28}/>
+        </div>
         <p>{props.user.name}</p>
         <div style={{flex: 1}} />
         {props.hasOwnProperty('details') && props.details &&
@@ -29,7 +32,13 @@ export default function UserCard(props){
       </div>
 
       {props.hasOwnProperty('action') && <div class="usercard_footer">
-        <button type="button" onClick={() => props.action(props.user)}>ver galeria</button>
+        <button type="button" class="gallary-btn" onClick={() => props.action(props.user)}>
+          posts
+        </button>
+        <div style={{flex: 1}}/>
+        <button type="button" class="gallary-btn" onClick={() => props.action(props.user)}>
+          galeria
+        </button>        
       </div>}
     </div>
   </>

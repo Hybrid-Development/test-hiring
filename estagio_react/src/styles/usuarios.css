@@ -1,6 +1,7 @@
 main {
   max-height: 93vh;
   position: relative;
+  padding-top: 2em;
 }
 
 .users_list {

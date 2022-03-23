@@ -112,3 +112,20 @@
   color: #666;
   font-weight: bold;
 }
+
+.input_title, .textarea_body{
+  padding: 1em .5em;
+  border-radius: .5em;
+  border: 1px solid black;
+  margin-bottom: 1em;
+}
+
+.button-group{
+  display: flex;
+  align-items: stretch;
+}
+
+.button-group button:nth-child(2){
+  margin: 0 .5em;
+}
+

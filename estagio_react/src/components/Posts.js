@@ -108,8 +108,8 @@ const PostIntance = ({post, posts,setPosts}) => {
   return <>{
             (editedId == post.id) ?
             <>
-              <input value={post.title} onChange={(e) => handleChangeTitle(e, post)}/>
-              <textarea className="body" value={post.body} onChange={(e) => handleChangeBody(e, post)}/>
+              <input className="input_title" value={post.title} onChange={(e) => handleChangeTitle(e, post)}/>
+              <textarea className="textarea_body" value={post.body} onChange={(e) => handleChangeBody(e, post)}/>
             </>
             :
             <>
@@ -118,7 +118,7 @@ const PostIntance = ({post, posts,setPosts}) => {
             </>
           }
           <div style={{flex: 1}}/>
-          <div>
+          <div className='button-group'>
             <button 
               className="btn"
               type="button" 

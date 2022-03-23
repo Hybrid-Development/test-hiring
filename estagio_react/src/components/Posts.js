@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { getPosts } from '../services/post'
 import { useUserContext } from '../contexts/user';
 import '../styles/posts.css'

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Thumbnail from './Thumbnail';
 import { getPhotos } from '../services/album'
 import '../styles/album.css'

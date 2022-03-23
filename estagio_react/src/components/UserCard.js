@@ -1,5 +1,6 @@
 import '../styles/userCard.css'
 import { BsPerson } from 'react-icons/bs'
+import React from 'react';
 
 export default function UserCard(props){
   return <>

@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from "framer-motion"
 import { CgCloseO } from 'react-icons/cg'
 import '../styles/modal.css'

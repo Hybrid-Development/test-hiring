@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Modal from '../components/Modal'
 import AlbumsPreview from '../components/AlbumsPreview';
 import UserCard from '../components/UserCard';

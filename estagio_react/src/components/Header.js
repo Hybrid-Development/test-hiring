@@ -1,3 +1,4 @@
+import React from 'react'
 import '../styles/header.css'
 import { useUserContext } from '../contexts/user'
 import { HiOutlineRefresh } from 'react-icons/hi'

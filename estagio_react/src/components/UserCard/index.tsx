@@ -1,9 +1,14 @@
+import { User } from '../../services/users';
 import * as S from './styles';
 
-export function UserCard() {
+interface UserCardProps {
+  user: User;
+}
+
+export function UserCard({ user }: UserCardProps) {
   return (
     <S.Container>
-      <p>user card</p>
+      <p>{user.name}</p>
     </S.Container>
   );
 }

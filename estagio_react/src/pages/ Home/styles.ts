@@ -9,15 +9,14 @@ export const Wrapper = styled.div`
   max-width: 752px;
   width: 100%;
   margin: 0 auto;
-  margin-top: 5rem;
+  margin-bottom: 5rem;
 `;
 
 export const Header = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-
-  margin-bottom: 5rem;
+  margin-top: 5rem;
 `;
 
 export const UsersList = styled.div`

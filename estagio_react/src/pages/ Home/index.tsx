@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { UserCard } from '../../components/UserCard';
 import { User, usersService } from '../../services/users';
 import * as S from './styles';
@@ -29,9 +28,7 @@ export function Home() {
         <S.UsersList>
           {users.map((user) => (
             <S.UserCardWrapper key={user.id}>
-              <Link to={`/user/${user.id}`}>
-                <UserCard user={user} />
-              </Link>
+              <UserCard user={user} />
             </S.UserCardWrapper>
           ))}
         </S.UsersList>

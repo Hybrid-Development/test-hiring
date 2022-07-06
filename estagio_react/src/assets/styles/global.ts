@@ -20,6 +20,7 @@ export default createGlobalStyle`
 
   button, a {
     cursor: pointer;
+    outline: 0;
   }
 
   a {

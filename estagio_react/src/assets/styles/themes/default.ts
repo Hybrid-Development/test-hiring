@@ -7,5 +7,8 @@ export default {
     primary: {
       main: '#1F2029',
     },
+    pink: {
+      primary: '#DB3F90',
+    },
   },
 };

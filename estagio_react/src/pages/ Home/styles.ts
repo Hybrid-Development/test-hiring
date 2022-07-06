@@ -16,6 +16,8 @@ export const Header = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+
+  margin-bottom: 5rem;
 `;
 
 export const UsersList = styled.div`

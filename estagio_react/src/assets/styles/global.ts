@@ -12,11 +12,17 @@ export default createGlobalStyle`
     background: ${({ theme }) => theme.colors.background};
   }
 
-  body, button, input {
+  body, button, input, a {
     font-family: 'Montserrat', sans-serif;
+    font-family: 1rem;
+    color: ${({ theme }) => theme.colors.text.primary};
   }
 
   button, a {
     cursor: pointer;
+  }
+
+  a {
+    text-decoration: none;
   }
 `;

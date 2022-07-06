@@ -6,11 +6,13 @@ import Posts from 'pages/Posts'
 import PostEdit from 'pages/PostEdit'
 import { useState } from 'react'
 import { IPost } from 'types/posts'
+import Header from 'components/Header'
 
 function Router() {
   const [posts, setPosts] = useState<IPost[]>([])
   return (
     <BrowserRouter>
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/albums/:id" element={<Albums />} />

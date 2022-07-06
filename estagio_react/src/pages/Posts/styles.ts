@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
 
-  padding: 4rem 0;
+  padding: 2rem 0;
 `
 
 export const Posts = styled.div`

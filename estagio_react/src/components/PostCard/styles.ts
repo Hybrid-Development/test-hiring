@@ -12,10 +12,6 @@ export const Content = styled.div`
     font-size: 0.875rem;
   }
 
-  h3 {
-    font-size: 1rem;
-  }
-
   .author {
     display: flex;
     align-items: center;
@@ -43,8 +39,66 @@ export const Actions = styled.div`
     display: flex;
     align-items: center;
 
+    button {
+      width: 20px;
+      height: 20px;
+    }
+
     button + button {
       margin-left: 0.5rem;
     }
+  }
+
+  .comments {
+    display: flex;
+    align-items: center;
+    
+    button {
+      width: 20px;
+      height: 20px;
+    }
+
+    p {
+      margin-left: 8px;
+      font-size: 0.875rem;
+    }
+  }
+`;
+
+export const Comments = styled.div`
+  margin-top: 1rem;
+
+  > h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+`;
+
+export const CommentWrapper = styled.div`
+  & + & {
+    margin-top: 1rem;
+  }
+  
+  .author {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+
+    button {
+      width: 16px;
+      height: 16px;
+    }
+
+    > h3 {
+      margin-left: 0.5rem;
+    }
+  }
+
+  h3 {
+      font-size: 1rem;
+  }
+
+  p {
+    font-size: 0.875rem;
   }
 `;

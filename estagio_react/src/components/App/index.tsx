@@ -1,5 +1,5 @@
 import { ThemeProvider } from 'styled-components';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Link } from 'react-router-dom';
 
 import defaultTheme from '../../assets/styles/themes/default';
 import GlobalStyles from '../../assets/styles/global';
@@ -15,6 +15,20 @@ function App() {
 
         <S.Container>
           <S.Wrapper>
+            <div className="links">
+              <div className="link">
+                <Link to="/">
+                  <p>Gallery</p>
+                </Link>
+              </div>
+
+              <div className="link">
+                <Link to="/posts">
+                  <p>Posts</p>
+                </Link>
+              </div>
+            </div>
+
             <AppRoutes />
           </S.Wrapper>
         </S.Container>

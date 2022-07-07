@@ -3,13 +3,16 @@ import { ConfirmModal } from '../../components/ConfirmModal';
 import { EditModal } from '../../components/EditModal';
 import { Header } from '../../components/Header';
 import { PostCard } from '../../components/PostCard';
-import { Post, PostBody, postsService } from '../../services/posts';
+import {
+  Comment, Post, PostBody, postsService,
+} from '../../services/posts';
 import { User, usersService } from '../../services/users';
 import * as S from './styles';
 
 interface IPost {
   post: Post;
   user: User;
+  comments: Comment[];
 }
 
 export function Posts() {
@@ -27,12 +30,14 @@ export function Posts() {
       await Promise.all(
         postsData.map(async (post) => {
           const { data: userData } = await usersService.getById(post.userId);
+          const { data: commentsData } = await postsService.getComments(post.id);
 
           setPosts((prevState) => [
             ...prevState,
             {
               post,
               user: userData,
+              comments: commentsData,
             },
           ]);
         }),
@@ -63,6 +68,7 @@ export function Posts() {
       if (item.post.id === id) {
         return {
           user: item.user,
+          comments: item.comments,
           post: {
             id: item.post.id,
             userId: item.post.userId,
@@ -83,11 +89,12 @@ export function Posts() {
       <Header title="Users Posts" />
 
       <S.Container>
-        {posts.map((item) => (
-          <S.PostItem key={item.post.id}>
+        {posts.map((item, i) => (
+          <S.PostItem key={i}>
             <PostCard
               post={item.post}
               user={item.user}
+              comments={item.comments}
               onDelete={() => {
                 setIsModalOpen({
                   isOpen: true,
@@ -102,7 +109,6 @@ export function Posts() {
                 });
                 setSelectedPost(item);
               }}
-              onShowComments={() => console.log('show comments')}
             />
           </S.PostItem>
         ))}

@@ -1,6 +1,4 @@
-import { useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
-import Slider from 'react-slick';
 import { Photo } from '../../services/albums';
 
 import * as S from './styles';

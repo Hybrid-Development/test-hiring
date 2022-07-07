@@ -11,6 +11,10 @@ class PostsService {
   async listPosts() {
     return api.get<Post[]>('/posts');
   }
+
+  async deletePost(id: number) {
+    return api.delete(`/posts/${id}`);
+  }
 }
 
 const postsService = new PostsService();

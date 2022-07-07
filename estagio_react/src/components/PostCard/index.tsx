@@ -10,9 +10,14 @@ import * as S from './styles';
 interface PostCardProps {
   post: Post;
   user: User;
+  onEdit: () => void;
+  onDelete: () => void;
+  onShowComments: () => void;
 }
 
-export function PostCard({ post, user }: PostCardProps) {
+export function PostCard({
+  post, user, onDelete, onEdit, onShowComments,
+}: PostCardProps) {
   return (
     <S.Container>
       <S.Content>
@@ -28,17 +33,17 @@ export function PostCard({ post, user }: PostCardProps) {
 
       <S.Actions>
         <div className="deleteAndEdit">
-          <button type="button">
+          <button type="button" onClick={onEdit}>
             <HiOutlinePencil size={20} />
           </button>
 
-          <button type="button">
+          <button type="button" onClick={onDelete}>
             <RiDeleteBin7Line size={20} />
           </button>
         </div>
 
         <div className="comments">
-          <button type="button">
+          <button type="button" onClick={onShowComments}>
             <BiCommentDetail size={20} />
           </button>
         </div>

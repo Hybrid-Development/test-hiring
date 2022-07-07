@@ -1,19 +1,15 @@
-import { useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
-import Slider from 'react-slick';
-import { Photo } from '../../services/albums';
+import { Button } from '../Button';
 
 import * as S from './styles';
 
-interface LightBoxProps {
+interface EditModalProps {
   isOpen: boolean;
   onRequestClose: () => void;
-  photo: Photo;
+  onConfirm: () => void;
 }
 
-export function LightBox({
-  isOpen, onRequestClose, photo,
-}: LightBoxProps) {
+export function EditModal({ isOpen, onConfirm, onRequestClose }: EditModalProps) {
   if (!isOpen) {
     return null;
   }
@@ -21,7 +17,12 @@ export function LightBox({
   return ReactDOM.createPortal(
     <S.Overlay onMouseDown={onRequestClose}>
       <S.Wrapper onMouseDown={(e) => e.stopPropagation()}>
-        <img src={photo.url} alt={photo.title} />
+
+        <div className="action">
+          <Button onClick={onConfirm}>
+            Confirm
+          </Button>
+        </div>
       </S.Wrapper>
     </S.Overlay>,
     document.getElementById('modals-portal') as HTMLElement,

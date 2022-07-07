@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { ConfirmModal } from '../../components/ConfirmModal';
 import { Header } from '../../components/Header';
 import { PostCard } from '../../components/PostCard';
 import { Post, postsService } from '../../services/posts';
@@ -12,6 +13,11 @@ interface IPost {
 
 export function Posts() {
   const [posts, setPosts] = useState<IPost[]>([]);
+  const [selectedPost, setSelectedPost] = useState<IPost>();
+  const [isModalOpen, setIsModalOpen] = useState({
+    isOpen: false,
+    name: '',
+  });
 
   useEffect(() => {
     (async () => {
@@ -33,7 +39,17 @@ export function Posts() {
     })();
   }, []);
 
-  console.log(posts);
+  function handleCloseModal() {
+    setIsModalOpen({
+      isOpen: false,
+      name: '',
+    });
+  }
+
+  async function handleDeletePost(id: number) {
+    await postsService.deletePost(id);
+    handleCloseModal();
+  }
 
   return (
     <>
@@ -41,11 +57,31 @@ export function Posts() {
 
       <S.Container>
         {posts.map((item) => (
-          <S.PostItem>
-            <PostCard post={item.post} user={item.user} />
+          <S.PostItem key={item.post.id}>
+            <PostCard
+              post={item.post}
+              user={item.user}
+              onDelete={() => {
+                setIsModalOpen({
+                  isOpen: true,
+                  name: 'confirm-delete',
+                });
+                setSelectedPost(item);
+              }}
+              onEdit={() => console.log('edit')}
+              onShowComments={() => console.log('show comments')}
+            />
           </S.PostItem>
         ))}
       </S.Container>
+
+      {isModalOpen.name === 'confirm-delete' && (
+        <ConfirmModal
+          isOpen={isModalOpen.isOpen}
+          onRequestClose={handleCloseModal}
+          onConfirm={() => handleDeletePost(selectedPost?.post.id!)}
+        />
+      )}
     </>
   );
 }

@@ -49,7 +49,8 @@
     "no-use-before-define": "off",
     "no-unused-vars": "off",
     "class-methods-use-this": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-no-bind": "off"
   },
   "settings": {
     "import/resolver": {

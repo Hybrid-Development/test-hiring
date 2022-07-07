@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Header } from '../../components/Header';
 import { UserCard } from '../../components/UserCard';
 import { User, usersService } from '../../services/users';
 import * as S from './styles';
@@ -19,20 +20,16 @@ export function Home() {
   }, []);
 
   return (
-    <S.Container>
-      <S.Wrapper>
-        <S.Header>
-          <h1>Users List</h1>
-        </S.Header>
+    <>
+      <Header title="Users List" />
 
-        <S.UsersList>
-          {users.map((user) => (
-            <S.UserCardWrapper key={user.id}>
-              <UserCard user={user} />
-            </S.UserCardWrapper>
-          ))}
-        </S.UsersList>
-      </S.Wrapper>
-    </S.Container>
+      <S.UsersList>
+        {users.map((user) => (
+          <S.UserCardWrapper key={user.id}>
+            <UserCard user={user} />
+          </S.UserCardWrapper>
+        ))}
+      </S.UsersList>
+    </>
   );
 }

@@ -22,6 +22,10 @@ export default createGlobalStyle`
     cursor: pointer;
     outline: 0;
   }
+  
+  input {
+    outline: 0;
+  }
 
   a {
     text-decoration: none;

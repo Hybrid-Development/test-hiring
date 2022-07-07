@@ -19,10 +19,25 @@ export const Wrapper = styled.div`
   background: ${({ theme }) => theme.colors.primary.main};
   border-radius: 4px;
 
+  .inputWrapper {
+    width: 100%;
+    height: 40px;
+
+    label {
+      font-weight: 600;
+      font-size: 0.875rem;
+      margin-bottom: 0.25rem;
+    }
+  }
+
+  .inputWrapper + .inputWrapper {
+    margin-top: 32px;
+  }
+
   .action {
     width: 100px;
     height: 50px;
     margin-left: auto;
-    margin-top: 1rem;
+    margin-top: 2.5rem;
   }
 `;

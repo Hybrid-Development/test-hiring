@@ -7,6 +7,11 @@ export interface Post {
   userId: number;
 }
 
+export interface PostBody {
+  body: string;
+  title: string;
+}
+
 class PostsService {
   async listPosts() {
     return api.get<Post[]>('/posts');
@@ -14,6 +19,10 @@ class PostsService {
 
   async deletePost(id: number) {
     return api.delete(`/posts/${id}`);
+  }
+
+  async updatePost(id: number, data: PostBody) {
+    return api.put(`/posts/${id}`, { data });
   }
 }
 

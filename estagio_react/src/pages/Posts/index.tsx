@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { ConfirmModal } from '../../components/ConfirmModal';
+import { EditModal } from '../../components/EditModal';
 import { Header } from '../../components/Header';
 import { PostCard } from '../../components/PostCard';
-import { Post, postsService } from '../../services/posts';
+import { Post, PostBody, postsService } from '../../services/posts';
 import { User, usersService } from '../../services/users';
 import * as S from './styles';
 
@@ -48,6 +49,32 @@ export function Posts() {
 
   async function handleDeletePost(id: number) {
     await postsService.deletePost(id);
+    setPosts((prevState) => prevState.filter((item) => item.post.id !== id));
+    handleCloseModal();
+  }
+
+  async function handleUpdatePost(id: number, body: PostBody) {
+    await postsService.updatePost(id, {
+      body: body.body,
+      title: body.title,
+    });
+
+    setPosts((prevState) => prevState.map((item) => {
+      if (item.post.id === id) {
+        return {
+          user: item.user,
+          post: {
+            id: item.post.id,
+            userId: item.post.userId,
+            body: body.body,
+            title: body.title,
+          },
+        };
+      }
+
+      return item;
+    }));
+
     handleCloseModal();
   }
 
@@ -68,7 +95,13 @@ export function Posts() {
                 });
                 setSelectedPost(item);
               }}
-              onEdit={() => console.log('edit')}
+              onEdit={() => {
+                setIsModalOpen({
+                  isOpen: true,
+                  name: 'edit',
+                });
+                setSelectedPost(item);
+              }}
               onShowComments={() => console.log('show comments')}
             />
           </S.PostItem>
@@ -80,6 +113,15 @@ export function Posts() {
           isOpen={isModalOpen.isOpen}
           onRequestClose={handleCloseModal}
           onConfirm={() => handleDeletePost(selectedPost?.post.id!)}
+        />
+      )}
+
+      {isModalOpen.name === 'edit' && (
+        <EditModal
+          isOpen={isModalOpen.isOpen}
+          onRequestClose={handleCloseModal}
+          post={selectedPost?.post!}
+          onConfirm={handleUpdatePost}
         />
       )}
     </>

@@ -12,15 +12,15 @@ import getData from "../utils/getData";
 // import { Container } from './styles';
 
 const Albums: React.FC = () => {
-  let { id } = useParams();
+  let { userId } = useParams();
   const [albums, setAlbums] = useState([] as iAlbums[]);
   const [user, setUser] = useState<iUsers>({} as iUsers);
   useEffect(() => {
     const getdata = async () => {
-      setAlbums(await getData<iAlbums[]>(`/user/${id}/albums`));
+      setAlbums(await getData<iAlbums[]>(`/user/${userId}/albums`));
       const user = await getData<iUsers[]>("/users", {
         params: {
-          id,
+          id: userId,
         },
       });
       setUser(user[0]);

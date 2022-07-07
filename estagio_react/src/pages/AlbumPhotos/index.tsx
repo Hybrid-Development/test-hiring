@@ -10,13 +10,9 @@ import * as S from './styles';
 export function AlbumPhotos() {
   const [photos, setPhotos] = useState<Photo[]>([]);
   const [isLightBoxOpen, setIsLightBoxOpen] = useState(false);
-  const [activeSlideId, setActiveSlideId] = useState(0);
+  const [activePhoto, setActivePhoto] = useState<Photo>();
 
   const { id } = useParams();
-
-  function handleSetActiveSlideId(slideId: number) {
-    setActiveSlideId(slideId);
-  }
 
   useEffect(() => {
     (async () => {
@@ -25,17 +21,15 @@ export function AlbumPhotos() {
     })();
   }, []);
 
-  console.log(activeSlideId);
-
   return (
     <>
       <Header title="Album photos" />
 
       <S.Container>
-        {photos.map((photo, i) => (
+        {photos.map((photo) => (
           <S.PhotoButton onClick={() => {
             setIsLightBoxOpen(true);
-            setActiveSlideId(i);
+            setActivePhoto(photo);
           }}
           >
             <PhotoCard photo={photo} />
@@ -47,9 +41,7 @@ export function AlbumPhotos() {
         <LightBox
           isOpen={isLightBoxOpen}
           onRequestClose={() => setIsLightBoxOpen(false)}
-          photos={photos}
-          setActiveSlideId={handleSetActiveSlideId}
-          activeSlideId={activeSlideId}
+          photo={activePhoto!}
         />
       )}
     </>

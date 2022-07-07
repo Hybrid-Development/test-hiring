@@ -12,6 +12,10 @@ class UsersService {
   async listUsers() {
     return api.get<User[]>('/users');
   }
+
+  async getById(id: number) {
+    return api.get<User>(`/users/${id}`);
+  }
 }
 
 const usersService = new UsersService();

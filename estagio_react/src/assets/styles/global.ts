@@ -27,16 +27,18 @@ export default createGlobalStyle`
     text-decoration: none;
   }
 
+  svg {
+    color: ${({ theme }) => theme.colors.text.primary};
+  }
+
   ::-webkit-scrollbar {
     width: 7px;
   }
 
-  /* Track */
   ::-webkit-scrollbar-track {
     background: ${({ theme }) => theme.colors.background};
   }
 
-  /* Handle */
   ::-webkit-scrollbar-thumb {
     background: ${({ theme }) => theme.colors.primary.main};
   }

@@ -1,16 +1,15 @@
 import { api } from '../api';
 
 export interface Post {
-  email: string;
-  name: string;
+  body: string;
   id: number;
-  phone: string;
-  username: string;
+  title: string;
+  userId: number;
 }
 
 class PostsService {
   async listPosts() {
-    return api.get('/posts?limit=10');
+    return api.get<Post[]>('/posts');
   }
 }
 

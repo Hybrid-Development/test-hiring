@@ -13,7 +13,7 @@ const Cards: React.FC<Props> = ({ user }) => {
 
   return (
     <CardContainer>
-      <Link to={`/albums/${user.id}`} rel="noopener noreferrer">
+      <Link to={`/user/${user.id}/albums`} rel="noopener noreferrer">
         <ImageContainer>
           {/* <BsPersonCircle width="80px" height="80px" /> */}
           <BsFillFilePersonFill size={150} />
@@ -22,8 +22,11 @@ const Cards: React.FC<Props> = ({ user }) => {
 
       <DetailsContainer>
         <div>
-          <Link to={`/albums/${user.id}`} rel="noopener noreferrer">
+          <Link to={`/user/${user.id}/albums`} rel="noopener noreferrer">
             <p>{user.name}</p>
+          </Link>
+          <Link to={`/user/${user.id}/posts`} rel="noopener noreferrer">
+            <p>Ver Posts</p>
           </Link>
         </div>
       </DetailsContainer>

@@ -31,16 +31,21 @@ const Albums: React.FC = () => {
   // console.log(user);
   return (
     <AlbumContainer>
-      <div style={{ gridArea: "user" }}>
+      <div style={{ gridArea: "user", paddingLeft: "2vw" }}>
         <Cards user={user} />
       </div>
-      <AlbumsListContainer>
-        {albums.map((album) => (
-          <AlbumItem key={album.id}>
-            <Link to={`/photos/${album.id}`}>{album.title}</Link>
-          </AlbumItem>
-        ))}
-      </AlbumsListContainer>
+      <div style={{ gridArea: "title_album" }}>
+        <h1>Lista de Albuns</h1>
+      </div>
+      <div style={{ gridArea: "list_album" }}>
+        <AlbumsListContainer>
+          {albums.map((album) => (
+            <AlbumItem key={album.id}>
+              <Link to={`/photos/${album.id}`}>{album.title}</Link>
+            </AlbumItem>
+          ))}
+        </AlbumsListContainer>
+      </div>
     </AlbumContainer>
   );
 };

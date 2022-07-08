@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { HiHome } from "react-icons/hi";
+import { ImBin, ImPen } from "react-icons/im";
 import { Link, useParams } from "react-router-dom";
 import Cards from "../components/Cards";
 import { iComment, iPost, iUsers } from "../interface";
@@ -46,6 +47,7 @@ const Comments: React.FC = () => {
     console.log(comments);
   }, []);
   // console.log(user);
+  const onDelete = (commentId: number) => {};
   return (
     <PostContainer>
       <div style={{ gridArea: "user", paddingLeft: "2vw" }}>
@@ -85,6 +87,10 @@ const Comments: React.FC = () => {
               <span>
                 <p>comment:</p>
                 <p>{comment.body}</p>
+              </span>
+              <span>
+                <ImBin />
+                <ImPen />
               </span>
             </PostItem>
           ))}

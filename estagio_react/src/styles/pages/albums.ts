@@ -117,4 +117,7 @@ export const PostItem = styled(AlbumItem)`
     gap: 0.2rem;
     border-bottom: solid 1px gray;
   }
+  span:last-child {
+    justify-content: space-evenly;
+  }
 `;

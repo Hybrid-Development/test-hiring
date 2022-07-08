@@ -3,16 +3,22 @@ import styled from "styled-components";
 export const HomeContainer = styled.div`
   display: flex;
   height: 100vh;
-  width: 100vw;
-  /* justify-content: center; */
-  align-items: center;
+  max-width: 100vw;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
   background-color: rgba(25, 36, 36, 0.5);
   overflow-x: hidden;
+  padding: 0.3rem;
+  > h1 {
+    align-self: center;
+    margin: auto;
+  }
 `;
-export const UserConatiner = styled.div`
+export const UserContainer = styled.div`
   display: flex;
   gap: 1rem;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   border-top: solid 1px gray;
   border-bottom: solid 1px gray;
   padding: 1rem;
@@ -25,4 +31,8 @@ export const UserConatiner = styled.div`
   }
   -ms-overflow-style: none; /* IE and Edge 
   scrollbar-width: none; Firefox */
+  @media (max-width: 500px) {
+    flex-direction: column;
+    margin-top: 1rem;
+  }
 `;

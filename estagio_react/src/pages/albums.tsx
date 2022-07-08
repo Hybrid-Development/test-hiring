@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { HiHome } from "react-icons/hi";
 import Cards from "../components/Cards";
 import { iAlbums, iUsers } from "../interface";
 import {
   AlbumContainer,
   AlbumItem,
   AlbumsListContainer,
+  Container,
 } from "../styles/pages/albums";
 import getData from "../utils/getData";
 
@@ -34,18 +36,25 @@ const Albums: React.FC = () => {
       <div style={{ gridArea: "user", paddingLeft: "2vw" }}>
         <Cards user={user} />
       </div>
-      <div style={{ gridArea: "title_album" }}>
-        <h1>Lista de Albuns</h1>
-      </div>
-      <div style={{ gridArea: "list_album" }}>
+      <Container gridArea="title_album">
+        <div>
+          <Link to="/">
+            <HiHome size={40} />
+          </Link>
+          <h1>Lista de Albuns</h1>
+        </div>
+      </Container>
+      <Container gridArea="list_album">
         <AlbumsListContainer>
           {albums.map((album) => (
             <AlbumItem key={album.id}>
-              <Link to={`/photos/${album.id}`}>{album.title}</Link>
+              <Link to={`/user/${userId}/albums/${album.id}/photos`}>
+                {album.title}
+              </Link>
             </AlbumItem>
           ))}
         </AlbumsListContainer>
-      </div>
+      </Container>
     </AlbumContainer>
   );
 };

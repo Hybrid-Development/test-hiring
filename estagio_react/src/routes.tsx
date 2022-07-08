@@ -1,20 +1,26 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Albums from "./pages/albums";
+import Comments from "./pages/comments";
 
-// import Albums from 'pages/Albums';
 import Home from "./pages/home";
-// import Posts from 'pages/Posts';
-// import PostEdit from 'pages/PostEdit';
-// import { useState } from 'react';
-// import { iPost } from 'types/posts';
+import Photos from "./pages/photos";
+import Posts from "./pages/posts";
 
 function Router() {
-  // const [posts, setPosts] = useState<iPost[]>([]);
   return (
     <BrowserRouter>
       <Routes>
-        <Route  path="/" element={<Home />} />
-        <Route path="/albums/:userId" element={<Albums />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/user/:userId/albums" element={<Albums />} />
+        <Route
+          path="/user/:userId/albums/:albumId/photos"
+          element={<Photos />}
+        />
+        <Route path="/user/:userId/posts" element={<Posts />} />
+        <Route
+          path="/user/:userId/posts/:postId/comments"
+          element={<Comments />}
+        />
       </Routes>
     </BrowserRouter>
   );
